@@ -38,10 +38,11 @@ function App() {
         <Navbar mode={Mode} toggle={toggleMode} />
         <Alert alert={alert} />
         <Routes>
+          <Route path="/" element={<TextForm mode={Mode} toggle={toggleMode} showAlert={showAlert} />}>
           <Route path="/About" element={<About mode={Mode}/>}/>
           <Route path="/Contact" element={<Contact mode={Mode}/>}/>
-          <Route path="/" element={<TextForm mode={Mode} toggle={toggleMode} showAlert={showAlert} />}/>
           <Route path="*" element={<Error/>}/>
+          </Route>
         </Routes>
     </>
   );
