@@ -20,10 +20,10 @@ export default function Navbar(props) {
           <button className="bg-white border-2 border-green-500 w-20 h-8 rounded-md hover:shadow-md hover:bg-gradient-to-r from-green-400 to-green-900 hover:text-white hover:border-green-900 text-black">
             search
           </button> */}
-          <button className="rounded-full border-2 border-black w-8 h-8 bg-black"></button>
+          {/* <button className="rounded-full border-2 border-black w-8 h-8 bg-black"></button>
           <button className="rounded-full border-2 border-black w-8 h-8 bg-green-500"></button>
           <button className="rounded-full border-2 border-black w-8 h-8 bg-cyan-500"></button>
-          <button className="rounded-full border-2 border-black w-8 h-8 bg-violet-500"></button>
+          <button className="rounded-full border-2 border-black w-8 h-8 bg-violet-500"></button> */}
           <label className="relative inline-flex items-center cursor-pointer sm:absolute sm:left-[250px] sm:bottom-[90px]">
             <input
               type="checkbox"
