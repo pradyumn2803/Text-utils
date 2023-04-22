@@ -3,7 +3,7 @@ import { NavLink ,Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <>
-      <div className="navbar flex justify-between sm:pb-2 sm:flex-col sm:relative" style={{backgroundColor : props.mode==='Light'?'#5086de':'#292a2b',color : props.mode==='Light'?'black':'white'}}>
+      <div className="navbar flex justify-between sm:flex-col sm:relative" style={{backgroundColor : props.mode==='Light'?'#5086de':'#292a2b',color : props.mode==='Light'?'black':'white'}}>
         <div className="flex items-center sm:flex-col sm:pt-2">
           <div className="font-bold text-xl ml-2"><Link to="/">Text-Utils</Link></div>
           <ul className="flex space-x-5 p-4 text-md items-center">
@@ -24,7 +24,7 @@ export default function Navbar(props) {
           <button className="rounded-full border-2 border-black w-8 h-8 bg-green-500"></button>
           <button className="rounded-full border-2 border-black w-8 h-8 bg-cyan-500"></button>
           <button className="rounded-full border-2 border-black w-8 h-8 bg-violet-500"></button> */}
-          <label className="relative inline-flex items-center cursor-pointer sm:absolute sm:left-[250px] sm:bottom-[90px]">
+          <label className="relative inline-flex items-center cursor-pointer sm:absolute sm:right-[5px] sm:bottom-[60px]">
             <input
               type="checkbox"
               value=""

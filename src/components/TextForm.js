@@ -71,10 +71,7 @@ export default function TextForm(props) {
   };
 
   const handleCopy = () => {
-    let textt = document.querySelector("#cpy");
-    textt.select();
-    navigator.clipboard.writeText(textt.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(textval);
     props.showAlert("Copied Text to clipboard");
   };
 
@@ -162,7 +159,7 @@ export default function TextForm(props) {
           >
             {textval.length} letters,{" "}
             {
-              textval.split(" ").filter((element) => {
+              textval.split(/\s+/).filter((element) => {
                 return element.length !== 0;
               }).length
             }{" "}
