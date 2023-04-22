@@ -13,29 +13,29 @@ export default function TextForm(props) {
     settext(textval.toLowerCase());
   };
 
-  const handlewordssize = () => {
-    if (textval === "") return 0;
-    let words = textval.split(" ");
-    let n = words.length;
-    let word = 0;
-    for (let i = 0; i < n; i++) {
-      if (words[i][0] === undefined) continue;
-      else word++;
-    }
-    return word;
-  };
+  // const handlewordssize = () => {
+  //   if (textval === "") return 0;
+  //   let words = textval.split(" ");
+  //   let n = words.length;
+  //   let word = 0;
+  //   for (let i = 0; i < n; i++) {
+  //     if (words[i][0] === undefined) continue;
+  //     else word++;
+  //   }
+  //   return word;
+  // };
 
-  const handlelettersize = () => {
-    if (textval === "") return 0;
-    let words = textval.split(" ");
-    let n = words.length;
-    let letter = 0;
-    for (let i = 0; i < n; i++) {
-      if (words[i][0] === undefined) continue;
-      else letter += words[i].length;
-    }
-    return letter;
-  };
+  // const handlelettersize = () => {
+  //   if (textval === "") return 0;
+  //   let words = textval.split(" ");
+  //   let n = words.length;
+  //   let letter = 0;
+  //   for (let i = 0; i < n; i++) {
+  //     if (words[i][0] === undefined) continue;
+  //     else letter += words[i].length;
+  //   }
+  //   return letter;
+  // };
 
   const handleCapitalise = () => {
     let st = "";
@@ -74,6 +74,7 @@ export default function TextForm(props) {
     let textt = document.querySelector("#cpy");
     textt.select();
     navigator.clipboard.writeText(textt.value);
+    document.getSelection().removeAllRanges();
     props.showAlert("Copied Text to clipboard");
   };
 
@@ -95,46 +96,56 @@ export default function TextForm(props) {
           onChange={handleonchange}
           cols="120"
           rows="15"
-          style={{backgroundColor : props.mode==='Light'?'white':'gray', color: props.mode === "Light" ? "black" : "white" }}
+          style={{
+            backgroundColor: props.mode === "Light" ? "white" : "#5e5f93",
+            color: props.mode === "Light" ? "black" : "white",
+          }}
         />
         <div className="flex flex-start flex-wrap">
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleUpper}
           >
             UpperCase
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleLower}
           >
             LowerCase
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleCapitalise}
           >
             Capitalize
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleAlternate}
           >
             AlternateCase
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleCopy}
           >
             CopyTextToClipboard
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleExtraSpaces}
           >
             RemoveExtraSpaces
           </button>
           <button
+            disabled={textval.length === 0}
             className="bg-red-400 border-2 border-red-800 mt-2 p-2 mr-2 rounded-md hover:shadow-md hover:bg-gradient-to-r from-red-400 to-pink-500 hover:text-white hover:border-green-900"
             onClick={handleclear}
           >
@@ -149,7 +160,13 @@ export default function TextForm(props) {
             className="font-bold"
             style={{ color: props.mode === "Light" ? "black" : "white" }}
           >
-            {handlelettersize()} letters, {handlewordssize()} words
+            {textval.length} letters,{" "}
+            {
+              textval.split(" ").filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+            words
           </div>
         </div>
         <div style={{ color: props.mode === "Light" ? "black" : "white" }}>
@@ -159,8 +176,8 @@ export default function TextForm(props) {
           >
             Preview
           </div>
-          <p className="text-xl">
-            {textval.length === 0 ? "Enter something to preview it" : textval}
+          <p className="text-l">
+            {textval.length === 0 ? "Nothing to Preview!" : textval}
           </p>
         </div>
       </div>
