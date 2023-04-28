@@ -16,9 +16,9 @@ export default function Contact(props) {
               Contact Us
             </h1>
           </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
+          <div className="lg:w-1/2 md:w-2/3 sm:w-[80%] mx-auto">
+            <div className="flex flex-wrap sm:flex-col -m-2">
+              <div className="p-2 w-1/2 sm:w-[100%]">
                 <div className="relative">
                   <label
                     for="name"
@@ -37,7 +37,7 @@ export default function Contact(props) {
                   />
                 </div>
               </div>
-              <div className="p-2 w-1/2">
+              <div className="p-2 w-1/2 sm:w-[100%]">
                 <div className="relative">
                   <label
                     style={{
@@ -88,7 +88,7 @@ export default function Contact(props) {
           </div>
         </div>
         <div className="p-2 w-full pt-2 mt-8 border-t border-gray-200 text-center">
-          <p className="leading-normal my-2" style={{
+          <p className="leading-normal my-2 sm:text-md" style={{
                       color: props.mode === "Light" ? "black" : "white",
                     }}>
             Developer: Pradyumn Choudhary
