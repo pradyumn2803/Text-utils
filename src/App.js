@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
@@ -39,8 +38,7 @@ function App() {
         <Alert alert={alert} />
         <Routes>
           <Route path="/" element={<TextForm mode={Mode} toggle={toggleMode} showAlert={showAlert} />}/>
-          <Route path="/About" element={<About mode={Mode}/>}/>
-          <Route path="/Contact" element={<Contact mode={Mode}/>}/>
+          <Route path="/Contact" element={<Contact mode={Mode} showAlert={showAlert}/>}/>
           <Route path="*" element={<Error/>}/>
         </Routes>
     </>
