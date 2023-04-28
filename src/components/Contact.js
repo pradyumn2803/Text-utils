@@ -88,7 +88,7 @@ export default function Contact(props) {
           </div>
         </div>
         <div className="p-2 w-full pt-2 mt-8 border-t border-gray-200 text-center">
-          <p className="leading-normal my-2 sm:text-md" style={{
+          <p className="leading-normal my-2 sm:text-sm" style={{
                       color: props.mode === "Light" ? "black" : "white",
                     }}>
             Developer: Pradyumn Choudhary
