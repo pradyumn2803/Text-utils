@@ -5,7 +5,7 @@ export default function Contact(props) {
     <div className=" flex sm:w-[350px] w-[450px] m-auto flex-wrap">
       <section className="text-gray-600 body-font relative mt-4">
         <div
-          className="container"
+          className="container m-auto"
           style={{ color: props.mode === "Light" ? "black" : "white" }}
         >
           <div className="flex flex-col text-center w-full mb-4">

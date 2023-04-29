@@ -12,23 +12,58 @@ export default function Navbar(props) {
           color: props.mode === "Light" ? "black" : "white",
         }}
       >
-        {show && <div className="z-10 absolute inset-0 h-[55px] top-[57px] pl-4 " style={{backgroundColor: props.mode === "Light" ? "#5086de" : "#292a2b",
-          color: props.mode === "Light" ? "black" : "white",
-        }}>
-          <ul className="flex flex-col">
-            <li className="pb-1" onClick={()=>{setShow(!show)}}>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li onClick={()=>{setShow(!show)}}>
-              <NavLink to="/Contact">Contact us</NavLink>
-            </li>
-          </ul>
-        </div>}
+        {show && (
+          <div
+            className="z-10 absolute inset-0 h-[55px] top-[57px] pl-4 "
+            style={{
+              backgroundColor: props.mode === "Light" ? "#5086de" : "#292a2b",
+              color: props.mode === "Light" ? "black" : "white",
+            }}
+          >
+            <ul className="flex flex-col">
+              <li
+                className="pb-1"
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li
+                onClick={() => {
+                  setShow(!show);
+                }}
+              >
+                <NavLink to="/Contact">Contact us</NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
         <div className="flex items-center">
-          <button className="hamburger space-y-1 sm:visible ml-2 md:hidden lg:hidden xl:hidden 2xl:hidden" onClick={()=>{setShow(!show)}}>
-            <div className="w-5 h-[2px]  border-[2px] border-black"></div>
-            <div className="w-5 h-[2px]  border-[2px] border-black"></div>
-            <div className="w-5 h-[2px]  border-[2px] border-black"></div>
+          <button
+            className="hamburger space-y-1 sm:visible ml-2 md:hidden lg:hidden xl:hidden 2xl:hidden"
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            <div
+              className="w-5 h-[2px]  border-[2px]"
+              style={{
+                borderColor: props.mode === "Light" ? "black" : "white",
+              }}
+            ></div>
+            <div
+              className="w-5 h-[2px]  border-[2px]"
+              style={{
+                borderColor: props.mode === "Light" ? "black" : "white",
+              }}
+            ></div>
+            <div
+              className="w-5 h-[2px]  border-[2px]"
+              style={{
+                borderColor: props.mode === "Light" ? "black" : "white",
+              }}
+            ></div>
           </button>
           <div className="font-bold text-xl ml-2 sm:ml-5">
             <Link to="/">Text-Utils</Link>
