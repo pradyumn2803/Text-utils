@@ -87,7 +87,7 @@ export default function TextForm(props) {
       <div className="flex flex-col m-auto w-[60%] sm:w-[90%] md:w-[90%]">
         <textarea
           id="cpy"
-          className="border-2 border-black mt-5 px-2"
+          className="border-2 border-black mt-7 px-2"
           placeholder="Type your text here"
           value={textval}
           onChange={handleonchange}
