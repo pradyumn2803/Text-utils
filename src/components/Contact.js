@@ -5,7 +5,7 @@ export default function Contact(props) {
     <div className=" flex sm:w-[350px] w-[450px] m-auto flex-wrap">
       <section className="text-gray-600 body-font relative mt-4">
         <div
-          className="container m-auto"
+          className="container m-auto sm:w-[100%]"
           style={{ color: props.mode === "Light" ? "black" : "white" }}
         >
           <div className="flex flex-col text-center w-full mb-4">
@@ -33,7 +33,7 @@ export default function Contact(props) {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full sm:w-[75%] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function Contact(props) {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full sm:w-[75%] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
               </div>
@@ -70,13 +70,13 @@ export default function Contact(props) {
                   <textarea
                     id="message"
                     name="message"
-                    className="w-full sm:w-[75%] bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-44 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-44 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   ></textarea>
                 </div>
               </div>
               <div className="p-2 w-full">
                 <button
-                  className="flex justify-center mx-auto text-black bg-white border-2 border-indigo-400 py-2 px-2 w-20 focus:outline-none hover:text-white hover:bg-indigo-600 rounded text-md"
+                  className="flex justify-center mx-auto text-black bg-white border-2 border-indigo-400 py-2 px-2 w-20 focus:outline-none hover:text-white hover:bg-indigo-600 rounded text-md sm:text-sm sm:p-1"
                   onClick={() => {
                     props.showAlert("Thank you for your feedback!");
                   }}
