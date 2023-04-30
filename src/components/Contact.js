@@ -76,7 +76,7 @@ export default function Contact(props) {
               </div>
               <div className="p-2 w-full">
                 <button
-                  className="flex justify-center mx-auto text-black bg-white border-2 border-indigo-400 py-2 px-2 w-20 focus:outline-none hover:text-white hover:bg-indigo-600 rounded text-md sm:text-sm sm:p-1"
+                  className="flex justify-center mx-auto text-black bg-white border-2 border-indigo-400 py-2 px-2 w-20 focus:outline-none hover:text-white hover:bg-indigo-600 rounded text-md sm:text-sm sm:px-1"
                   onClick={() => {
                     props.showAlert("Thank you for your feedback!");
                   }}
